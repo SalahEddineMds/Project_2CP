@@ -54,9 +54,7 @@ app.use("/modification", modificationRouter);
 const PORT = process.env.PORT || 3000;
 
 mongoose
-  .connect(
-    "mongodb+srv://jazmine:11112024@cluster0.okfd2cg.mongodb.net/?retryWrites=true&w=majority"
-  )
+  .connect(process.env.URL)
   .then(() => {
     app.listen(PORT, async () => {
       console.log(

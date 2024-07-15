@@ -21,8 +21,8 @@ const insertionChercheur = async (req, res) => {
     const { email,Equipe ,Diplome,nom , Qualité,EtablissementOrigine,prenom, contact, Matricule ,  GradeRecherche, GradeEnsegnement } = req.body
     const nomComplet = prenom+ " " + nom
     try {
-        
-        if(!email || !nom || !prenom || !Qualité ||Matricule  || !EtablissementOrigine  || !Diplome || !GradeRecherche || !GradeEnsegnement){
+        console.log(`email ${email}|| !nom  ${nom} || !prenom  ${prenom} || !Qualité ${Qualité} || !Matricule ${Matricule} || !EtablissementOrigine ${EtablissementOrigine} || !Diplome ${Diplome}|| !GradeRecherche ${GradeRecherche}|| !GradeEnsegnement ${GradeEnsegnement}`)
+        if(!email || !nom || !prenom || !Qualité ||!Matricule  || !EtablissementOrigine  || !Diplome || !GradeRecherche || !GradeEnsegnement){
             throw new Error("Tous les champs sont obligatoires")
         }
         
@@ -56,7 +56,7 @@ const insertionChercheur = async (req, res) => {
             GradeRecherche,
             GradeEnsegnement,
             H_index,
-           orcid,
+            orcid,
              lien: {
                  DBLP: lien 
              }

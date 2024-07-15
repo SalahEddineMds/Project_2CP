@@ -236,7 +236,7 @@ export default function Statistiques() {
                   <TabsTrigger value="courbe">Courbe</TabsTrigger>
                   <TabsTrigger value="histogramme">Histogramme</TabsTrigger>
                   <TabsTrigger value="cercle">Diagramme circulaire</TabsTrigger>
-                  <TabsTrigger value="liste">Liste</TabsTrigger>
+                 
                 </TabsList>
                 <TabsContent value="courbe">
                   <div className="#002D62 h-full w-full">
@@ -255,11 +255,7 @@ export default function Statistiques() {
                   </div>
                 </TabsContent>
 
-                <TabsContent value="liste">
-                  <div>
-                    
-                  </div>
-                </TabsContent>
+              
               </Tabs>
             </div>
           </div>

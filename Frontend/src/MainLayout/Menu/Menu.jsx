@@ -123,7 +123,7 @@ export default function Menu({ isLogged, setIsLogged, userInfo, setUserInfo }) {
                   </div>
                   <ul className="grid gap-3 border-b-2 border-gray-200 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <LinkItem to="/control/landingPage" title="Page d'acceill">
-                      Modifier le contenu de la page d'acceill
+                      Modifier le contenu de la page d'acceuill
                     </LinkItem>
 
                     <MiseAJour />
@@ -407,7 +407,7 @@ function Periodicité() {
         <AlertDialogHeader>
           <AlertDialogTitle>Ajouter une Periodicité</AlertDialogTitle>
           <AlertDialogDescription>
-            modifier la Periodicité d'une ConfJourn par id
+            Modifier la Periodicité d'une Conference/Journal
           </AlertDialogDescription>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -474,11 +474,25 @@ function ProfileMenu({ userInfo, setIsLogged, isLogged }) {
               <LinkItem to="/chercheur/me" title="Profile" />
               {isLogged &&
               (userInfo.type == 'Assistant' || userInfo.type == 'Directeur') ? (
-                <Periodicité />
+                <>
+                
+                <AddEncadrement />
+                <AddPublication />
+                <AddProject />
+              </>
+                
               ) : null}
-              <AddEncadrement />
-              <AddPublication />
-              <AddProject />
+              {isLogged &&
+              (userInfo.type == 'Chercheur' ) ? (
+                <>
+                
+                <AddEncadrement />
+                <AddPublication />
+                <AddProject />
+              </>
+                
+              ) : null}
+              
               {isLogged && userInfo.type != 'Admin' && (
                 <LinkItem to="/settings" title="Settings" />
               )}

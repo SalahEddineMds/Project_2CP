@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/jsx-no-comment-textnodes */
 import { useOutletContext, useParams } from 'react-router-dom';
 import axios from 'axios';
 
@@ -20,7 +22,7 @@ export default function Informations() {
             <span>{data ? data['Qualité'] : null}</span>
           </div>
           <div className="flex flex-col">
-            <h2 className="font-bold">Etablissement d'origine:</h2>
+          <h2 className="font-bold">Etablissement d'origine:</h2>
             <span>{data ? data.EtablissementOrigine : null}</span>
           </div>
           <div className="flex flex-col">
@@ -50,6 +52,10 @@ export default function Informations() {
           <div className="flex flex-col">
             <h2 className="font-bold">Téléphone:</h2>
             <span>{data ? data.tel : null}</span>
+          </div>
+          <div className="flex flex-col">
+            <h2 className="font-bold">ORCID:</h2>
+            <span>{data ? data.orcid : null}</span>
           </div>
         </div>
       </div>

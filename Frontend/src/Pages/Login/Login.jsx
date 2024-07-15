@@ -88,7 +88,7 @@ export default function Login() {
           onSubmit={form.handleSubmit(onSubmit)}
           className="absolute left-[8vw] top-[4vw] flex flex-col items-start justify-between gap-[2vw] border-[0.1vw] border-solid border-buttonDark bg-white p-[4vw] shadow-xl"
         >
-          <h1 className="m-0 font-title text-[2vw] font-semibold">LOGIN</h1>
+          <h1 className="m-0 font-title text-[2vw] font-semibold">Connexion</h1>
           <FormField
             control={form.control}
             name="email"
@@ -120,7 +120,7 @@ export default function Login() {
               <FormItem>
                 <FormLabel>
                   <h3 className="font-1 mb-[0.5vw] font-title text-[1vw] font-medium">
-                    Password
+                    Mot de passe
                   </h3>
                 </FormLabel>
                 <FormControl>
@@ -143,7 +143,7 @@ export default function Login() {
               checked={show}
               onCheckedChange={() => setShow(!show)}
             />
-            <Label htmlFor="airplane-mode">Show password</Label>
+            <Label htmlFor="airplane-mode">Voir mot de passe</Label>
           </div>
           <div className="flex w-[20vw] flex-row items-center justify-between">
             <FormField
@@ -158,7 +158,7 @@ export default function Login() {
                         checked={field.value}
                         onCheckedChange={field.onChange}
                       />
-                      <Label htmlFor="airplane-mode">Remember me</Label>
+                      <Label htmlFor="airplane-mode">Se souvenir de moi</Label>
                     </div>
                   </FormControl>
                 </FormItem>
@@ -173,7 +173,7 @@ export default function Login() {
             type="submit" // Added type for button
             className="h-auto w-[20.2vw] rounded-sm border-0 bg-buttonLight py-[0.65vw] font-title text-[1.1vw] font-medium text-textLight active:opacity-95"
           >
-            Login
+            Connexion
           </Button>
           {Error.is ? (
             <h2 className=" m-0 p-0 text-red-500">{Error.content}</h2>
@@ -238,7 +238,7 @@ function ResetRequest({ isSubmitted, handleButtonClick }) {
             onClick={onSubmit}
             onClick={handleButtonClick}
           >
-            réinitialiser votre mot de passe
+            Réinitialiser votre mot de passe
           </Button>
         </DialogFooter>
       </DialogContent>

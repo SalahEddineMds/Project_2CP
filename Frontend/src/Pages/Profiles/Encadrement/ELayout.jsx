@@ -128,7 +128,7 @@ export default function ELayout() {
   <h2 className='p-6 font-bold'>La liste des encadrants:</h2>
     {data.Encadrants && data.Encadrants.map((Encad , index  )=>
       <div  className="   flex border bg-[#EFF3FF] rounded-2xl p-4 mr-4 w-full h-16  mb-4  items-center   ">
-     <h3 className='px-2' >{index +1 }_{Encad.NomComplet}  </h3>
+     <h3 className='px-2' >{index +1 }_{Encad.nomComplet}  </h3>
      <h3 className='px-2 font-bold' > le role : </h3>
      <h3 >{Encad.role}</h3>
      </div>

@@ -113,13 +113,13 @@ export default function CPLayout() {
         <div className="flex w-1/5 flex-col gap-y-2">
           <Link
             // to={headerData.lien.GoogleScholar}
-            to={headerData['lien.GoogleScholar']}
+            to={headerData.lien ? headerData.lien.GoogleScholar : '#'}
             className="rounded-lg bg-buttonDark px-1 py-1 text-center text-white hover:bg-buttonLight"
           >
             Compte Google Scholar
           </Link>
           <Link
-            to={'https://dblp.org/'}
+            to={headerData.lien ? headerData.lien.DBLP : '#'}
             className="rounded-lg bg-buttonDark px-1 py-1 text-center text-white hover:bg-buttonLight"
           >
             Compte DBLP

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { DevTool } from '@hookform/devtools';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
@@ -39,7 +40,7 @@ export default function AddChercheur() {
       .required(' le  grade-enseignement est requis '),
     graderecherche: yup.string().required(' le grade-recherche est requis '),
     qualitee: yup.string().required(' la qualitee est requise '),
-    matricule: yup.string().required('la Matricule est requise'),
+    Matricule: yup.string().required('le Matricule est requise'),
     equipe: yup.string(),
     lien: yup.string(),
     projet: yup.string(),
@@ -68,6 +69,7 @@ const [isSubmitted, setIsSubmitted] = useState(false);
         H_index: data.hIndex,
         contact: data.lien,
         prenom: data.prenom,
+        Matricule: data.Matricule,
       };
 
       console.log(info);
@@ -117,7 +119,7 @@ const [isSubmitted, setIsSubmitted] = useState(false);
                 <hr className="my-8 h-px border-0  bg-black bg-opacity-50 "></hr>
                 <FormField
                   control={form.control}
-                  name="matricule"
+                  name="Matricule"
                   render={({ field }) => (
                     <>
                       <FormItem>
@@ -339,7 +341,7 @@ const [isSubmitted, setIsSubmitted] = useState(false);
                       <FormItem>
                         <div className="flex flex-row items-center justify-start   ">
                           <div className="px-5">
-                            <FormLabel>établissement d'origine :</FormLabel>
+                            <FormLabel>établissement d origine :</FormLabel>
                           </div>
                           <FormControl>
                             <div className="ml-6">

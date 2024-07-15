@@ -22,11 +22,11 @@ const ChercheurSchema = new Schema ({
     },
     GradeEnsegnement: {
         type: String,
-        required: true
+       // required: true
     },
     GradeRecherche: {
         type: String,
-        required: true
+        //required: true
     },
     H_index: {
            type: Number,

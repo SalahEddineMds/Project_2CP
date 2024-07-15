@@ -7,23 +7,24 @@ export default function RechercheLayout({ searchby }) {
   const { userInfo, isLogged } = useOutletContext();
   console.log('userInfo : ', userInfo);
   return (
-    <>
-      <div className="  min-h-screen pl-[7vw] pt-16">
-        <h1 className="mb-4 text-[2rem] font-semibold text-textDark">
-          Recherche {searchby + ' '}
-          <br />
-          <span className=" text-gray-500">-v0.7-</span>
-        </h1>
-        <div className=" flex flex-row items-center justify-start"></div>
-        <div className="h-[100%] w-[90%]">
-          <RechercheTable
-            searchby={searchby}
-            navigate={navigate}
-            userInfo={userInfo}
-            isLogged={isLogged}
-          />
-        </div>
+    <div className="min-h-screen bg-gray-100 pb-5 pl-[4vw] pt-16">
+      <div className="mx-auto  max-w-[1400px] px-4 sm:px-6 lg:px-4">
+        <header className="mb-8">
+          <h1 className="text-4xl font-semibold text-gray-800">
+            Recherche {searchby}
+          </h1>
+        </header>
+        <main>
+          <div className="rounded-lg bg-white p-6 shadow">
+            <RechercheTable
+              searchby={searchby}
+              navigate={navigate}
+              userInfo={userInfo}
+              isLogged={isLogged}
+            />
+          </div>
+        </main>
       </div>
-    </>
+      </div>
   );
 }

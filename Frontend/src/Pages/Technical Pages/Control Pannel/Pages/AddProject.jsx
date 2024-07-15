@@ -22,9 +22,9 @@ export default function AddProject() {
   const schema = yup.object().shape({
     Num: yup.number().required('le numero est requis'),
     Titre: yup.string().required('le titre est requis'),
-    DateDebut: yup.date().required('la date de debut est requise'),
+    DateDebut: yup.string().required('la date de debut est requise'),
     chefProjet: yup.string().required(' le chef de projet est requis  '),
-    DateFin: yup.date(),
+    DateFin: yup.string(),
     Theme: yup.string().required(' le theme est requis '),
     liste_members: yup.string().required(' la liste des membres est requise '),
   });

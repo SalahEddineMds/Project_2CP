@@ -242,7 +242,7 @@ export function ColumnsProjet(userInfo, isLogged) {
             onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
             className="ml-[-5px]"
           >
-            Nom Complet
+            Titre
             <ArrowUpDown className="ml-2 h-4 w-4" />
           </Button>
         );
@@ -310,7 +310,7 @@ export function ColumnsProjet(userInfo, isLogged) {
           </Button>
         );
       },
-      cell: ({ row }) => <div>{row.getValue('_id').$numberInt}</div>,
+      cell: ({ row }) => <div>{row.getValue('_id')}</div>,
     },
     {
       accessorKey: 'DateDebut',
@@ -362,9 +362,8 @@ export function ColumnsProjet(userInfo, isLogged) {
               <NavLink to={`../../projet/${row.original._id}`}>
                 <DropdownMenuItem>Plus d'info</DropdownMenuItem>
               </NavLink>
-              {console.log('jsdhkfhak'+userInfo.Chercheur._id)}
-              {isLogged &&
-              (row.original.ChefDeProjet == userInfo._id || 
+                {isLogged &&
+              (row.original.ChefDeProjet == userInfo._id  || 
                 row.original.liste_members.includes(userInfo._id)) ? (
                 <NavLink to={`../../editprojet/${row.original._id}`}>
                   <DropdownMenuItem>Modifier</DropdownMenuItem>

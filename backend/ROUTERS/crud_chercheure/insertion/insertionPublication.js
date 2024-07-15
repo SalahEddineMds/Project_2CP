@@ -7,7 +7,7 @@ const insertionPublication = async (req, res ) => {
   
     const { Date ,idCherch ,confJourn , volume, MaisonEdistion , pages, rang, Titre, Lien, Membres, Classement } = req.body
     //const Chercheur = req.params.id
-    if (!Date || !idCherch || !confJourn ||!MaisonEdistion|| !volume || !pages || !rang || !Titre || !Lien || !Membres || !Classement){
+    if (!Date || !idCherch || !confJourn || !volume || !pages || !rang || !Titre   ){
       throw new Error("Veuillez remplir tous les champs");
     }
     ///

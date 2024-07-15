@@ -89,7 +89,7 @@ const encadrementsParAnnee = async (req, res, type) => {
     await encadrementsParAnnee(req, res, "PFE");
   };
   const master2ParAnnee = async (req, res) => {
-    await encadrementsParAnnee(req, res, "Master 2");
+    await encadrementsParAnnee(req, res, "Master2");
   };
   const doctoratParAnnee = async (req, res) => {
     await encadrementsParAnnee(req, res, "Doctorat");

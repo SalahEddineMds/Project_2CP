@@ -23,7 +23,7 @@ const UserSchema = new Schema({
     type: {
         type: String,
         required: true,
-        default: "chercheur"
+        default: "Chercheur"
     }
 }, { timestamps: true });
 

@@ -5,7 +5,7 @@ import AdminPLayout from './Admin/AdminPLayout';
 export default function ProfileController() {
   const { userInfo } = useOutletContext();
   const { id } = useParams();
-  return userInfo.type === 'Admin' && id == 'me' ? (
+  return userInfo?.type === 'Admin' && id == 'me' ? (
     <AdminPLayout />
   ) : (
     <CPLayout />

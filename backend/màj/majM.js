@@ -2,6 +2,7 @@ const Chercheur = require('../schema/Chercheur');
 const Publication = require('../schema/Publication');
 const conf = require('../schema/ConfJournal');
 
+
 function comparerSansCasse(chaine1, chaine2) {
     // Supprimer les espaces et les tirets et convertir en minuscules
     const chaineSansEspacesTirets1 = chaine1.toLowerCase().replace(/[\s-]/g, '');
@@ -63,15 +64,16 @@ const maj = async () => {
         const delay = 10000;
 const delayBeforeFetch = 10000;
         // Récupérer tous les documents
-        const docs = await Chercheur.find({}).exec();
+ const docs = await Chercheur.find({}).exec();
 
         // Parcourir les documents pour extraire les données
-        for (let doc of docs) {
+for (let doc of docs) {
 
             const cherch = doc.nomComplet;
 console.log("chercheur", cherch)
+
             const lien = "https://dblp.org/search/publ/api?q=" + cherch + "&format=json";
-           // const response = await fetch(lien);
+         
             const data = await fetchWithRetry(lien, maxRetries,delayBeforeFetch, delay);//response.json();
             const tabPublie = data.result.hits.hit;
 if(tabPublie) {
@@ -101,7 +103,7 @@ if(tabPublie) {
                 };
                 if (rang !== -1) {
                     const confJ = extraireParametreDblp(tabPublie[i].info.url)
-                    console.log(confJ)
+                   // console.log(confJ)
                     const publie = {
 
                         Date: tabPublie[i].info.year,
